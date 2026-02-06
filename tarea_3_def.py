@@ -67,7 +67,7 @@ while  x == 1:
                     print("DENEGADO: El email debe contener '@' y un dominio válido.")
                 
             else:# Si incluye '@', el email es válido
-                    print(f"VALIDADO: {email}")
+                    
                     if email.count('@') == 1 and email.endswith(('.com', '.com.mx', '.mx')):
                         partes = email.split('@')
                         antes_arroba = partes[0]
