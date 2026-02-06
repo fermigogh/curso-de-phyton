@@ -39,11 +39,14 @@ while  x == 1:
        
            
                 edad = input("Por favor, ingresa tu edad: ")
-
+                
                     # Validación: verificar si hay números en la cadena
-                if edad.isdigit() == False:
+                if not edad.isdigit():
                         # Generar error si incluye números
-                        print(f"DENEGADO: {edad} eres menor de edad")
+                        print(f"DENEGADO: aprende que solo son numeros en edad")
+                elif edad <=0 or edad >=120:
+                        print("Error: Edad no valida. Ingresa una edad entre 0 y 120.")
+                       
                 elif int(edad) < 18:
                         print("Error: Debes ser mayor de edad para registrarte.")
                 elif int(edad) == 18:
