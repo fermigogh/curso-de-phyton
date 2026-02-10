@@ -86,8 +86,7 @@ while  x == 1:
                     else:
                         print("DENEGADO: ya deberias ser capaz de hacer un email estudie. intente con .com, .com.mx o .mx.")
                         
-    print(f"usuario: {nombre } {apellido}")
+    print(f"usuario: {nombre} {apellido}")
     print(f"Edad: {edad}")
     print(f"Email: {email}")
     x=int(input("DESEA INSERTAR DATOS? 1 PARA SI, 2 PARA NO"))
-print("gracias pero pa cuando la salida al ramen")
