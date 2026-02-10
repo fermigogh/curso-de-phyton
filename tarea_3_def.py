@@ -1,3 +1,8 @@
+nombre =[]
+apellido =[]
+email =[]
+edad =[]
+
 x = 1
 edad = 0
 
