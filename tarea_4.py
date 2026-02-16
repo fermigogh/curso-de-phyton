@@ -2,6 +2,8 @@ nombre: str
 apellido: str
 email: str
 edad: int
+usuario: int
+contador = 0
 lista_nombre =["muestra", ]
 lista_apellido =["muestra", ]
 lista_email =["correodemuestra_gmail.com", ]
@@ -90,6 +92,7 @@ while  x == 1:
                         if len(antes_arroba) > 2 and any(despues_arroba.startswith(dominio) for dominio in ['gmail', 'hotmail', 'yahoo']):
                             print("Email aceptado.")
                             lista_email.append(email)
+                            contador =contador + 1
                             break
                         else:
                             print("DENEGADO: formato de email incorrecto intenta con .com, .com.mx o .mx.")
@@ -101,7 +104,10 @@ while  x == 1:
     print(f"Email: {email}")
     x=int(input("DESEA INSERTAR DATOS? 1 PARA SI, 2 PARA NO"))
 print("ahora a la segunda parte de la tarea")
-print("Nombres ingresados:", lista_nombre)
-print("Apellidos ingresados:", lista_apellido)
-print("Emails ingresados:", lista_email)
-print("Edades ingresadas:", lista_edad)
+print("que usuario desea ver .poseemos: ", contador, "usuarios registrados: ")
+usuario = int(input("ingrese un numero entro los dichos"))
+print("Nombres ingresados:", lista_nombre[usuario])
+print("Apellidos ingresados:", lista_apellido[usuario])
+print("Emails ingresados:", lista_email[usuario])
+print("Edades ingresadas:", lista_edad[usuario])
+print("Gracias por usar el programa no sabia si querias la informacion de los usuarios o no, en bucle")
