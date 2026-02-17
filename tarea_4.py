@@ -3,16 +3,19 @@ apellido: str
 email: str
 edad: int
 usuario: int
+menu = 0 
 mayores=0
 menores=0
 contador = 0
 count = 0
+i = 1
 lista_nombre =["muestra", ]
 lista_apellido =["muestra", ]
 lista_email =["correodemuestra_gmail.com", ]
 lista_edad =[18, ]
 
 x = 1
+x2 = 1
 
 
 x=int(input("DESEA INSERTAR DATOS? 1 PARA SI, 2 PARA NO: "))
@@ -108,20 +111,60 @@ while  x == 1:
                         
 
     x=int(input("DESEA INSERTAR DATOS? 1 PARA SI, 2 PARA NO"))
-print("la cantidad de usuarios mayores de edad es: ", mayores)
-print("la cantidad de usuarios menores de edad es: ", menores)
 
-count = contador + 1
-for i in range(count):
-       print("==USUARIOS REGISTRADOS==")
-       print("USUARIO nro: ", i, lista_nombre[i], lista_apellido[i])
-       print(lista_edad[i])
-       print(lista_email[i])
 
-print("que usuario desea ver .poseemos: ", contador, "usuarios registrados: ")
-usuario = int(input("ingrese un numero entro los dichos"))
-print("Nombres ingresados:", lista_nombre[usuario])
-print("Apellidos ingresados:", lista_apellido[usuario])
-print("Emails ingresados:", lista_email[usuario])
-print("Edades ingresadas:", lista_edad[usuario])
-print("Gracias por usar el programa no sabia si querias la informacion de los usuarios o no, en bucle")
+
+while True:
+        print("==========================================================================")
+        print("SI DESEA BUSCAR UN USUARIO RESIONE 1 PARA SI, " )
+        print("SI DESEA VER TODOS LOS USUARIOS PRESIONE 2")
+        print("SI DESEA VER LAS ESTADISTICAS PRESIONE 3")
+        print("SI DESEA SALIR PRESIONE 4")
+        menu=input("Nro: ")
+        if menu == "1":
+                print("==========================================================================")
+                print("que usuario desea ver .poseemos: ", contador, "usuarios registrados: ")
+                usuario = int(input("ingrese un numero entro los dichos"))
+                print("==USUARIO SELECCIONADO==", usuario)
+                print("Nombres ingresados:", lista_nombre[usuario])
+                print("Apellidos ingresados:", lista_apellido[usuario])
+                print("Emails ingresados:", lista_email[usuario])
+                print("Edades ingresadas:", lista_edad[usuario])
+                x2 = int(input("DESEA volver al menu o salir presione 1 para si y 2 para no: "))
+                if x2 == 1:
+                        continue
+                elif x2 == 2:
+                        print("Gracias por usar el programa, hasta luego")
+                        break
+                else:
+                        print("Opcion no valida, por favor ingrese una opcion del menu")
+                
+        elif menu == "2":
+                count = contador + 1
+                for i in range(count):
+                        print("==========================================================================")
+                        print("==USUARIOS REGISTRADOS==")
+                        print("USUARIO nro: -", i, lista_nombre[i], lista_apellido[i], '(', lista_edad[i] , ")", "-", lista_email[i])
+
+                        print("Opcion no valida, por favor ingrese una opcion del menu")
+                        
+        elif menu == "3":
+                print("==========================================================================")
+                print("==ESTADISTICAS DE USUARIOS==")
+                print("la cantidad de usuarios registrados es: ", contador)
+                print("la cantidad de usuarios mayores de edad es: ", mayores)
+                print("la cantidad de usuarios menores de edad es: ", menores)
+                x2 = int(input("DESEA volver al menu o salir presione 1 para si y 2 para no: "))
+                if x2 == 1:
+                        continue
+                elif x2 == 2:
+                        print("Gracias por usar el programa, hasta luego")
+                        break
+                else:
+                        print("Opcion no valida, por favor ingrese una opcion del menu")
+
+        elif menu == "4":
+                break
+        else:
+                print("Opcion no valida, por favor ingrese una opcion del menu")
+print("trabajo 4 terminado")
