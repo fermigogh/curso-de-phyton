@@ -6,6 +6,7 @@ usuario: int
 mayores=0
 menores=0
 contador = 0
+count = 0
 lista_nombre =["muestra", ]
 lista_apellido =["muestra", ]
 lista_email =["correodemuestra_gmail.com", ]
@@ -105,15 +106,18 @@ while  x == 1:
                     else:
                         print("DENEGADO: ya deberias ser capaz de hacer un email estudie. intente con .com, .com.mx o .mx.")
                         
-    print(f"usuario: {nombre } {apellido}")
-    print(f"Edad: {edad}")
-    print(f"Email: {email}")
+
     x=int(input("DESEA INSERTAR DATOS? 1 PARA SI, 2 PARA NO"))
 print("la cantidad de usuarios mayores de edad es: ", mayores)
 print("la cantidad de usuarios menores de edad es: ", menores)
-print("los usarios registrados son: ", lista_nombre, lista_apellido)
-print(lista_edad)
-print(lista_email)
+
+count = contador + 1
+for i in range(count):
+       print("==USUARIOS REGISTRADOS==")
+       print("USUARIO nro: ", i, lista_nombre[i], lista_apellido[i])
+       print(lista_edad[i])
+       print(lista_email[i])
+
 print("que usuario desea ver .poseemos: ", contador, "usuarios registrados: ")
 usuario = int(input("ingrese un numero entro los dichos"))
 print("Nombres ingresados:", lista_nombre[usuario])
