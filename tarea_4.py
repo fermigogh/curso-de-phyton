@@ -3,11 +3,14 @@ apellido: str
 email: str
 edad: int
 usuario: int
+mayores=0
+menores=0
 contador = 0
 lista_nombre =["muestra", ]
 lista_apellido =["muestra", ]
 lista_email =["correodemuestra_gmail.com", ]
 lista_edad =[18, ]
+
 x = 1
 
 
@@ -65,12 +68,14 @@ while  x == 1:
                        
                 elif int(edad) < 18:
                         diferencia = 18 - int(edad)
+                        menores = menores + 1
                         print(f"Error: Debes ser mayor de edad para registrarte. te faltan {diferencia} años")
                 elif int(edad) == 18:
                         print(f"VALIDADO: {edad} apenas llegaste a la mayoria de edad")
                         break
                 else:# Si no hay letras, la edad  es válido
                         diferencia= int(edad) - 18 
+                        mayores = mayores + 1
                         print(f"VALIDADO: {edad} eres mayor de edad superaste la mayoria de edad por {diferencia} años")
                         lista_edad.append(edad)
                         break
@@ -103,7 +108,11 @@ while  x == 1:
     print(f"Edad: {edad}")
     print(f"Email: {email}")
     x=int(input("DESEA INSERTAR DATOS? 1 PARA SI, 2 PARA NO"))
-print("ahora a la segunda parte de la tarea")
+print("la cantidad de usuarios mayores de edad es: ", mayores)
+print("la cantidad de usuarios menores de edad es: ", menores)
+print("los usarios registrados son: ", lista_nombre, lista_apellido)
+print(lista_edad)
+print(lista_email)
 print("que usuario desea ver .poseemos: ", contador, "usuarios registrados: ")
 usuario = int(input("ingrese un numero entro los dichos"))
 print("Nombres ingresados:", lista_nombre[usuario])
