@@ -69,7 +69,8 @@ while  x == 1:
                 elif int(edad) < 18:
                         diferencia = 18 - int(edad)
                         menores = menores + 1
-                        print(f"Error: Debes ser mayor de edad para registrarte. te faltan {diferencia} años")
+                        print(f" te faltan {diferencia} años PARA SER MAYOR DE EDAD")
+                        break
                 elif int(edad) == 18:
                         print(f"VALIDADO: {edad} apenas llegaste a la mayoria de edad")
                         break
