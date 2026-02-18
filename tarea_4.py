@@ -8,10 +8,10 @@ mayores=0
 menores=0
 contador = 0
 count = 0
-lista_nombre =["muestra", ]
-lista_apellido =["muestra", ]
-lista_email =["correodemuestra_gmail.com", ]
-lista_edad =[18, ]
+lista_nombre =[]
+lista_apellido =[]
+lista_email =[]
+lista_edad =[]
 
 x = 1
 x2 = 1
@@ -125,6 +125,7 @@ while True:
                 print("que usuario desea ver .poseemos: ", contador, "usuarios registrados: ")
                 usuario = int(input("ingrese un numero entro los dichos"))
                 print("==USUARIO SELECCIONADO==", usuario)
+                usuario = usuario - 1
                 print("Nombres ingresados:", lista_nombre[usuario])
                 print("Apellidos ingresados:", lista_apellido[usuario])
                 print("Emails ingresados:", lista_email[usuario])
@@ -139,13 +140,14 @@ while True:
                         print("Opcion no valida, por favor ingrese una opcion del menu")
                 
         elif menu == "2":
-                count = contador + 1
+                count = contador
                 
                 for i in range(count):
-                        nro = i + 1
+                        nro = i
+                        nro2 = nro + 1
                         print("==========================================================================")
                         print("==USUARIOS REGISTRADOS==")
-                        print("USUARIO nro: -", nro, lista_nombre[nro], lista_apellido[nro], "(", lista_edad[nro] , ")", "-", lista_email[nro])
+                        print("USUARIO nro: -", nro2, lista_nombre[nro], lista_apellido[nro], "(", lista_edad[nro] , ")", "-", lista_email[nro])
 
 
                         
