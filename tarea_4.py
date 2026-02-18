@@ -8,7 +8,6 @@ mayores=0
 menores=0
 contador = 0
 count = 0
-i = 1
 lista_nombre =["muestra", ]
 lista_apellido =["muestra", ]
 lista_email =["correodemuestra_gmail.com", ]
@@ -141,12 +140,14 @@ while True:
                 
         elif menu == "2":
                 count = contador + 1
+                
                 for i in range(count):
+                        nro = i + 1
                         print("==========================================================================")
                         print("==USUARIOS REGISTRADOS==")
-                        print("USUARIO nro: -", i, lista_nombre[i], lista_apellido[i], '(', lista_edad[i] , ")", "-", lista_email[i])
+                        print("USUARIO nro: -", nro, lista_nombre[nro], lista_apellido[nro], "(", lista_edad[nro] , ")", "-", lista_email[nro])
 
-                        print("Opcion no valida, por favor ingrese una opcion del menu")
+
                         
         elif menu == "3":
                 print("==========================================================================")
