@@ -1,5 +1,6 @@
 nombre_list=[]
 apellido_list=[]
+edad_list = []
 
 
 def validar_nombre(tipo_nombre):
@@ -16,3 +17,13 @@ def validar_nombre(tipo_nombre):
             nombre_input.lower()
             nombre_input.capitalize()
             return nombre_input
+def validar_edad(edad_numero):
+    while True:
+        edad_input=input('ingrese su edad: ')
+        if not edad_input.isdigit():
+            print('no debes llevar letras en edad')
+        elif int(edad_input)<0 or int(edad_input)>120:
+            print('no estas e el rango permitido')
+        else:
+            print (f'{edad_numero} {edad_input} VALIDADA')
+            return edad_input
