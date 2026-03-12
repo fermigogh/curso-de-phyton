@@ -1,7 +1,12 @@
+
+
+
 nombre_list=[]
 apellido_list=[]
 edad_list = []
-
+email_list=[]
+edad_mayor : int = 0
+edad_menor : int = 0
 
 def validar_nombre(tipo_nombre):
     while True:
@@ -27,3 +32,41 @@ def validar_edad(edad_numero):
         else:
             print (f'{edad_numero} {edad_input} VALIDADA')
             return edad_input
+def validar_email(email):
+    while True:
+        email = input("Por favor, ingresa tu email: ")
+        if "@" not in email or "." not in email:
+                    #error si no incluye '@'
+                    print("DENEGADO: El email debe contener '@' y un dominio válido.")
+                
+        else:# Si incluye '@', el email es válido
+            if email.count('@') == 1 and email.endswith(('.com', '.com.mx', '.mx')):
+                partes = email.split('@')
+                antes_arroba = partes[0]
+                despues_arroba = partes[1]
+                if len(antes_arroba) > 2 and any(despues_arroba.startswith(dominio) for dominio in ['gmail', 'hotmail', 'yahoo']):
+                    print("Email aceptado.")
+                    return email
+                else:
+                    print("DENEGADO: formato de email incorrecto intenta con .com, .com.mx o .mx.")
+            else:
+                print("DENEGADO: ya deberias ser capaz de hacer un email estudie. intente con .com, .com.mx o .mx.")
+def es_mayor():
+    global edad_list
+    global edad_mayor
+    global edad_menor
+    global may_men_lista
+    
+    for numero in edad_list:
+        print(numero)
+        if int(numero) < 18:
+            may_men_lista.append('menor de edad')
+            edad_menor= 1 +int(edad_menor)
+
+        elif int(numero) == 18:
+            may_men_lista.append('justo mayor')
+            edad_mayor= 1+int(edad_mayor)
+        else:         
+           may_men_lista.append('mayor de edad')
+           edad_mayor= 1 + int(edad_mayor)
+    return  
