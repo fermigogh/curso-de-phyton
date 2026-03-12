@@ -7,6 +7,11 @@ edad_list = []
 email_list=[]
 edad_mayor : int = 0
 edad_menor : int = 0
+may_men_lista = []
+edad:str
+contador: int
+x=1
+
 
 def validar_nombre(tipo_nombre):
     while True:
@@ -70,3 +75,19 @@ def es_mayor():
            may_men_lista.append('mayor de edad')
            edad_mayor= 1 + int(edad_mayor)
     return  
+
+
+
+nombre_validado = validar_nombre('nombre')
+apellido_validado = validar_nombre('apellido')
+edad_validado = validar_edad('edad')
+edad_validado=int(edad_validado)
+email_validado = validar_email('email')
+nombre_list.append(nombre_validado)
+apellido_list.append(apellido_validado)
+edad_list.append(edad_validado)
+email_list.append(email_validado)
+es_mayor()
+    
+print(f'mayores de edad: {edad_mayor}')
+print(f'menores de edad: {edad_menor}')
