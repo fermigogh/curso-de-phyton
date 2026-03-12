@@ -11,7 +11,7 @@ may_men_lista = []
 edad:str
 contador: int
 x=1
-
+bucle = 'si'
 
 def validar_nombre(tipo_nombre):
     while True:
@@ -75,19 +75,60 @@ def es_mayor():
            may_men_lista.append('mayor de edad')
            edad_mayor= 1 + int(edad_mayor)
     return  
+def mostrar_usuario():
+    global nombre_list
+    global apellido_list
+    global edad_list
+    global email_list
+    global bucle
+    while True:
+        print("==========================================================================")
+        print("1. cargar usuario")
+        print("2. Ver usuario por nombre")
+        print("3. Mostrar todos los usuarios")
+        print("4. Salir")
+        print("==========================================================================")
+        opcion = input("Selecciona una opción: ")
+        
+        if opcion == '1':
+            bucle = 'si'
+            return 
+        elif opcion == '2':
+            print("==========================================================================")
+            nombre_buscar = input("Ingresa el nombre del usuario a buscar: ")
+            if nombre_buscar in nombre_list:
+                index = nombre_list.index(nombre_buscar)
+                print(f"Usuario encontrado: {nombre_list[index]} {apellido_list[index]}, Edad: {edad_list[index]}, Email: {email_list[index]}")
+            else:
+                print("Usuario no encontrado.")
+        
+        elif opcion == '3':
+            print("==========================================================================")
+            for i in range(len(nombre_list)):
+                print(f"{nombre_list[i]} {apellido_list[i]}, Edad: {edad_list[i]}, Email: {email_list[i]}")
+        
+        elif opcion == '4':
+            bucle = 'no'
+            break
+        
+        else:
+            print("Opción no válida, por favor selecciona 1, 2 o 3.")
 
 
 
-nombre_validado = validar_nombre('nombre')
-apellido_validado = validar_nombre('apellido')
-edad_validado = validar_edad('edad')
-edad_validado=int(edad_validado)
-email_validado = validar_email('email')
-nombre_list.append(nombre_validado)
-apellido_list.append(apellido_validado)
-edad_list.append(edad_validado)
-email_list.append(email_validado)
-es_mayor()
-    
+while bucle == 'si':
+    print("==========================================================================")
+    nombre_validado = validar_nombre('nombre')
+    apellido_validado = validar_nombre('apellido')
+    edad_validado = validar_edad('edad')
+    edad_validado=int(edad_validado)
+    email_validado = validar_email('email')
+    nombre_list.append(nombre_validado)
+    apellido_list.append(apellido_validado)
+    edad_list.append(edad_validado)
+    email_list.append(email_validado)
+    es_mayor()
+    mostrar_usuario()
+        
 print(f'mayores de edad: {edad_mayor}')
 print(f'menores de edad: {edad_menor}')
